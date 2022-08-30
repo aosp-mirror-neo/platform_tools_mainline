@@ -1,0 +1,22 @@
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+python_binary_host {
+    name: "trim_worker",
+    srcs: [
+        "trim_worker.py",
+        "apex_utils.py",
+        "trim_action.py",
+    ],
+    version: {
+        py3: {
+            embedded_launcher: true,
+        },
+    },
+    libs: [
+        "apex_manifest_proto",
+        "apex_build_info_proto",
+    ],
+}
+
